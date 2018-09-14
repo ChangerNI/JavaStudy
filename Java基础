@@ -1,0 +1,10 @@
+1.Exception和Error有什么区别？
+
+Exception和Error都是继承了Throwable类，在Java中只有Throwable类型的实例才可以抛出（throw）或者捕获（catch），它是异常处理机制的的基本组成类型
+
+Error：指正常情况下，不太可能出现的情况，绝大部分的Error都会导致程序处于非正常的、不可恢复的状态。所以不便也不需要捕获，例如OutOfMemoryError。
+
+Exception：是程序运行过程中可以预料的意外情况，可能并且应该被捕获，进行相应的处理。Exception又可以分为可检查（Checked）异常和不检查（unchecked）异常；
+可检查的异常在源代码里必须显示地进行捕获，并且处理，这是编译器检查的一部分，例如IO异常等。不检查异常就是所谓的runtimeException（运行时异常），
+例如NullPointerException、ArrayIndexOutOfBoundsException等，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求，
+可以选择不去处理，JVM会接管处理这种异常。 
